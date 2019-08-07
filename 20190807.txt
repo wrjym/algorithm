@@ -1,0 +1,486 @@
+20190807
+
+package D1;
+
+import java.util.Scanner;
+/*
+ *  2072. 홀수만 더하기
+ */
+import java.util.*;
+
+public class D1_01 {
+    public static void main(String args[]){
+        Scanner input = new Scanner(System.in);
+        int line = input.nextInt();
+        int result = 0;
+        for(int i=0; i<line; i++){
+            for(int j=0; j<10; j++){
+                int num=input.nextInt();
+                if(num % 2==1){
+                    result+=num;
+                }
+            }
+            System.out.println("#"+(i+1)+" "+result);
+            result=0;
+        }
+    }
+}
+
+
+package D1;
+import java.util.*;
+/*
+ * 거꾸로출력
+ */
+public class D1_02 {
+	public static void main(String args[]){
+		Scanner scanner= new Scanner(System.in);
+		
+		int input = scanner.nextInt();
+		
+		for(int i=0; i<=input;i++)
+		{   
+			int result=input-i;
+			System.out.print(result+" ");
+		}
+		
+	}
+}
+
+package D1;
+import java.util.*;
+/*
+ *  거듭제곱근 
+ */
+public class D1_03 {
+	public static void main(String args[])
+	{
+		Scanner scanner = new Scanner(System.in);
+		int input = scanner.nextInt();
+		int result = 0;
+		for (int i=0 ; i<=input;i++ )
+		{	
+			System.out.print((int)Math.pow(2, i)+" ");
+		}
+		
+	}
+}
+
+package D1;
+/*
+ *  평균값
+ */
+import java.util.Scanner;
+
+public class D1_04 {
+	public static void main(String args[])
+	{
+		 Scanner input = new Scanner(System.in);
+	        int line = input.nextInt();
+	        double result = 0.0;
+	        for(int i=0; i<line; i++){
+	            for(int j=0; j<10; j++){
+	                double num=input.nextDouble();
+	                result = result + num;
+	            }
+	            result=result/10;
+	            
+	            System.out.println("#"+(i+1)+" "+Math.round(result));
+	            result=0;
+	        }
+	}
+}
+
+
+
+package D1;
+/*
+ *   가위바위보 노가다
+ */
+import java.util.*;
+public class D1_05 {
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		int input1 = sc.nextInt();
+		int input2 = sc.nextInt();
+		
+		if(input1==1 && input2 ==3) // 가위 보
+		{
+			System.out.println("A");
+		}
+		else if(input1==1 && input2 ==2) //가위 바위
+		{
+			System.out.println("B");
+		}
+		else if(input1==2 && input2 ==3) // 바위 보
+		{
+			System.out.println("B");
+		}
+		else if(input1==2 && input2 ==1) // 바위 가위
+		{
+			System.out.println("A");
+		}
+		else if(input1==3 && input2 ==1) // 보 가위
+		{
+			System.out.println("B");
+		}
+		else if(input1==3 && input2 ==2) // 보 바위
+		{
+			System.out.println("A");
+		}
+		
+	}
+}
+
+
+package D1;
+
+import java.util.Scanner;
+/*
+ *  두입력값 부등호 비교
+ */
+public class D1_06 {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		 Scanner input = new Scanner(System.in);
+	        int line = input.nextInt();
+	        String result = "";
+	        for(int i=0; i<line; i++){
+	        	int num1 = input.nextInt();
+	        	int num2 = input.nextInt();
+	        	if (num1>num2) result=">";
+	        	else if (num1<num2) result="<";
+	        	else result="=";
+	        		System.out.println("#"+(i+1)+" "+result);
+	         
+	        }
+	}
+
+}
+
+
+
+
+package D1;
+
+import java.util.Scanner;
+/*
+ *  최대값 구하기
+ */
+public class D1_07 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+        int line = input.nextInt();
+        int max = 0;
+        
+        for(int i=0; i<line; i++){
+            for(int j=0; j<10; j++){
+                int num=input.nextInt();
+                if(max<num){
+                    max=num;
+                }
+            }
+            System.out.println("#"+(i+1)+" "+max);
+            max=0;
+        }
+	}
+
+}
+
+
+package D1;
+/*
+ *  하나의 자연수를 입력 받아 각 자릿수의 합을 계산하는 프로그램을 작성하라.
+
+[제약 사항]
+
+자연수 N은 1부터 9999까지의 자연수이다. (1 ≤ N ≤ 9999)
+[입력]
+
+입력으로 자연수 N이 주어진다.
+
+[출력]
+
+각 자릿수의 합을 출력한다.
+ */
+import java.util.Scanner;
+
+public class D1_10 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		  Scanner sc = new Scanner(System.in);
+		  int num = sc.nextInt();
+		  int f=1000;
+		  int s=100;
+		  int t=10;
+		  int r=0;
+		  int a,b,c,d=0;
+		  if (num>f)
+		  {
+		   a=num/f; // 1000몫
+		   num=num%f; // 1000 나머지
+		   b=num/s;   // 100 몫
+		   num=num%s;  // 100 나머지
+		   c=num/t;   // 10 몫
+		   d=num%t;  // 10 나머지
+		   
+		   System.out.println(a+b+c+d);
+		  }
+		  else if (num > s)
+		  {
+		   b=num/s;   // 100 몫
+		   num=num%s;  // 100 나머지
+		   c=num/t;   // 10 몫
+		   d=num%t;  // 10 나머지
+		   
+		   System.out.println(b+c+d);
+		  }
+		  else if (num > f){
+		   c=num/t;   // 10 몫
+		   d=num%t;  // 10 나머지 
+		   System.out.println(c+d);
+		  }
+		  
+		  else {
+		   c=num/t;   // 10 몫
+		   d=num%t;  // 10 나머지
+		   System.out.println(d);
+		  } 
+	}
+
+}
+
+
+package D1;
+/*
+ *  입력한 만큼 덧셈 (N줄 덧셈)
+ */
+import java.util.Scanner;
+
+public class D1_11 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 int sum=0;
+	     Scanner sc = new Scanner(System.in);
+	     int input = sc.nextInt();
+	     for(int i=1; i<=input ; i++){
+	      sum=sum+i;
+	     }
+	     System.out.println(sum);
+	     
+	}
+
+}
+
+
+
+package D1;
+import java.util.*;
+/*
+ *  서랍의 비밀번호
+ */
+
+public class D1_12 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int input1 = sc.nextInt();
+        int input2 = sc.nextInt();
+        int count=0;
+        for(int i=0; i<input1-input2+1;i++)
+        {
+        	count++;
+        }
+        System.out.println(count);
+    }
+}
+
+
+package D1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+/*
+ * 중간값은 통계 집단의 수치를 크기 순으로 배열 했을 때 전체의 중앙에 위치하는 수치를 뜻한다."
+ 크기 순으로 배열한다음에 중앙에 위치한 값을 찾는 문제입니다.
+ */
+public class D1_9 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		  int count = sc.nextInt();
+		  int tmp = 0;
+		  int middle_count = Math.round(count/2);
+		  int[] arr = new int[count];
+		  
+		  for (int i=0; i<count ;i++)
+		  {
+		   arr[i]=sc.nextInt(); 
+		  }
+
+		  Arrays.sort(arr);
+		  System.err.print(arr[middle_count]);
+		  
+	}
+
+}
+
+
+
+package D2;
+/*
+ *  간단한 369게임 -- 노가다..
+ */
+import java.util.Scanner;
+
+public class D2_01 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+	    Scanner sc = new Scanner(System.in);
+	    int N = sc.nextInt();
+	    
+	    for(int i=1;i<=N;i++)
+	    {	
+	    	if(i<10)
+	    	{
+	    		if(i%3==0)
+	    		{
+	    			System.out.print("-"+" ");
+	    		}
+	    		else
+	    		{
+	    			System.out.print(i+" ");
+	    		}
+	    	}
+	    	else if (i>=10 && i<100)
+	    	{
+	    		String num =  Integer.toString(i);
+	    		String a = num.substring(0,1);
+	    		String b = num.substring(1,2);
+	    		int F_chk =  Integer.parseInt(a);
+	    		int S_chk =  Integer.parseInt(b);
+	    		if ( (F_chk % 3 == 0) && (S_chk % 3 == 0) && S_chk > 0 )
+	    		{
+	    			System.out.print("--"+" ");
+	    		}
+	    		else if ((F_chk % 3 != 0) && (S_chk % 3== 0) && S_chk > 0)
+	    		{
+	    			System.out.print("-"+" ");
+	    		}
+	    		else if ((F_chk % 3 == 0) && (S_chk % 3!= 0) && S_chk > 0)
+	    		{
+	    			System.out.print("-"+" ");
+	    		}
+	    		else if ( (F_chk % 3 == 0) && (S_chk == 0))
+	    		{
+	    			System.out.print("-"+" ");
+	    		}
+	    		else 
+	    		{
+	    			System.out.print(i+" ");
+	    		}
+	    	}
+	    	else if (i>=100 && i<1000)
+	    	{
+	    		String num =  Integer.toString(i);
+	    		String a = num.substring(0,1);
+	    		String b = num.substring(1,2);
+	    		String c = num.substring(2,3);
+	    		int F_chk =  Integer.parseInt(a);
+	    		int S_chk =  Integer.parseInt(b);
+	    		int T_chk =  Integer.parseInt(c);
+	    		if ( (F_chk % 3 == 0) && (S_chk % 3 == 0) && (T_chk % 3 == 0) && S_chk > 0 && T_chk > 0)
+	    		{
+	    			System.out.print("---"+" ");
+	    		}
+	    		else if ( (F_chk % 3 != 0) && (S_chk % 3 == 0) && (T_chk % 3 == 0) && S_chk > 0 && T_chk > 0)
+	    		{
+	    			System.out.print("--"+" ");
+	    		}
+	    		else if ( (F_chk % 3 == 0) && (S_chk % 3 != 0) && (T_chk % 3 == 0) && S_chk > 0 && T_chk > 0)
+	    		{
+	    			System.out.print("--"+" ");
+	    		}
+	    		else if ( (F_chk % 3 == 0) && (S_chk % 3 == 0) && (T_chk % 3 != 0) && S_chk > 0 && T_chk > 0)
+	    		{
+	    			System.out.print("--"+" ");
+	    		}
+	    		else if ( (F_chk % 3 == 0) && (S_chk % 3 == 0) && (T_chk % 3 == 0) && S_chk == 0 && T_chk > 0)
+	    		{
+	    			System.out.print("--"+" ");
+	    		}
+	    		else if ( (F_chk % 3 == 0) && (S_chk % 3 == 0) && (T_chk % 3 == 0) && S_chk > 0 && T_chk == 0)
+	    		{
+	    			System.out.print("--"+" ");
+	    		}
+	    		
+	    		else if ( (F_chk % 3 == 0) && (S_chk % 3 == 0) && (T_chk % 3 == 0) && (S_chk == 0 && T_chk == 0))
+	    		{
+	    			System.out.print("-"+" ");
+	    		}
+	    		else if ( (F_chk % 3 == 0) && (S_chk % 3 == 0) && (T_chk % 3 != 0) && S_chk == 0 && T_chk > 0)
+	    		{
+	    			System.out.print("-"+" ");
+	    		} 
+	    		else if ( (F_chk % 3 != 0) && (S_chk % 3 == 0) && (T_chk % 3 == 0) && S_chk == 0 && T_chk > 0)
+	    		{
+	    			System.out.print("-"+" ");
+	    		}
+	    		else if ( (F_chk % 3 == 0) && (S_chk % 3 != 0) && (T_chk % 3 == 0) && S_chk > 0 && T_chk == 0)
+	    		{
+	    			System.out.print("-"+" ");
+	    		} 
+	    		else if ( (F_chk % 3 != 0) && (S_chk % 3 == 0) && (T_chk % 3 == 0) && S_chk > 0 && T_chk == 0)
+	    		{
+	    			System.out.print("-"+" ");
+	    		} 
+	    		else if ( (F_chk % 3 != 0) && (S_chk % 3 == 0) && (T_chk % 3 != 0) && S_chk > 0 && T_chk > 0)
+	    		{
+	    			System.out.print("-"+" ");
+	    		} 	
+	    		else if ( (F_chk % 3 != 0) && (S_chk % 3 != 0) && (T_chk % 3 == 0) && S_chk > 0 && T_chk > 0)
+	    		{
+	    			System.out.print("-"+" ");
+	    		}
+	    		else if ( (F_chk % 3 == 0) && (S_chk % 3 != 0) && (T_chk % 3 != 0) && S_chk > 0 && T_chk > 0)
+	    		{
+	    			System.out.print("-"+" ");
+	    		} 
+	    		else
+	    		{
+	    			System.out.print(i+" ");
+	    		}
+	    	}
+	    	else 
+	    	{
+	    		System.out.print(i+" ");
+	    	}
+	    		
+	    }
+	    	
+	     
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
